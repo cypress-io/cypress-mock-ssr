@@ -3,7 +3,7 @@ const nock = require('nock')
 
 const cypressMockMiddleware = connect();
 
-cypressMockMiddleware.use('/__cypress_server_mock', function cypressServerMock(req, res, next) {
+cypressMockMiddleware.use('/__cypress_server_mock', function cypressServerMock(req, res) {
   const chunks = []
 
   req.on("data", (chunk) => {
