@@ -2,7 +2,7 @@ beforeEach(() => {
   cy.clearSSRMocks()
 })
 
-afterEach(() => {
+after(() => {
   cy.clearSSRMocks()
 })
 
