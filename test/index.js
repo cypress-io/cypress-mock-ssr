@@ -6,7 +6,7 @@ describe('Cypress Mock SSR Middleware', function () {
   let app;
   beforeEach(function () {
     app = connect();
-    app.use(cypressMockMiddleware);
+    app.use(cypressMockMiddleware());
   })
   it('should accept a mock', function (done) {
     request(app)
