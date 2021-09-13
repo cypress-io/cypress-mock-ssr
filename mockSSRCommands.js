@@ -7,7 +7,7 @@ after(() => {
 })
 
 Cypress.Commands.add("mockSSR", (payload) => {
-  cy.request('POST', "/__cypress_server_mock", payload)
+  cy.request("POST", "/__cypress_server_mock", payload)
 })
 
 Cypress.Commands.add("clearSSRMocks", () => {
