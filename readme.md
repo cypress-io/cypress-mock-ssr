@@ -125,4 +125,4 @@ app.prepare().then(() => {
 ## Credit
 
 - Developed by the Cypress DX Team
-- Thanks to [Gleb Bahmutov](@bahmutov) for the [inspiration](https://glebbahmutov.com/blog/mock-network-from-server/).
+- Thanks to [Gleb Bahmutov](https://twitter.com/@bahmutov) for the [inspiration](https://glebbahmutov.com/blog/mock-network-from-server/).
