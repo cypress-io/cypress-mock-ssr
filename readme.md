@@ -28,8 +28,26 @@ require("@cypress/mock-ssr/mockSSRCommands")
 
 ### mockSSR
 
-```js
+`mockSSR` sends a request to the middleware endpoint `/__cypress_server_mock` to set a mock for the given payload. Multiple calls to `mockSSR` can be made, each with distinct payloads.
 
+```js
+it("validate server rendered content", () => {
+  const joke = "Our wedding was so beautiful, even the cake was in tiers."
+  cy.mockSSR({
+    hostname: "https://icanhazdadjoke.com",
+    method: "GET",
+    path: "/",
+    statusCode: 200,
+    body: {
+      id: "NmbFtH69hFd",
+      joke,
+      status: 200,
+    },
+  })
+
+  cy.visit("/")
+  cy.contains("[data-cy=post]", joke)
+})
 ```
 
 ### clearSSRMocks
@@ -54,6 +72,8 @@ server.use(cypressMockMiddleware())
 
 ### Express
 
+`cypressMockMiddleware()` can be used with a [Express server](https://expressjs.com) to add the mocking capabilities for server rendered content.
+
 ```js
 const express = require("express")
 const { cypressMockMiddleware } = require("@cypress/mock-ssr")
@@ -74,16 +94,17 @@ server.listen(port, (err) => {
 
 ### Next.js
 
+`cypressMockMiddleware()` can be used with a [custom Next.js server](https://nextjs.org/docs/advanced-features/custom-server) to add the mocking capabilities to a [Next.js project](https://nextjs.org)
+
 ```js
 const express = require("express")
 const next = require("next")
+const { cypressMockMiddleware } = require("@cypress/mock-ssr")
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== "production"
 const app = next({ dev })
 const handle = app.getRequestHandler()
-
-const { cypressMockMiddleware } = require("@cypress/mock-ssr")
 
 app.prepare().then(() => {
   const server = express()
@@ -100,3 +121,8 @@ app.prepare().then(() => {
   })
 })
 ```
+
+## Credit
+
+- Developed by the Cypress DX Team
+- Thanks to [Gleb Bahmutov](@bahmutov) for the [inspiration](https://glebbahmutov.com/blog/mock-network-from-server/).
