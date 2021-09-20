@@ -1,6 +1,7 @@
 # @cypress/mock-ssr
 
-> Connect Middleware and [Cypress](https://cypress.io) commands for mocking Server Side Rendered (SSR) content in [Cypress](https://cypress.io) tests.
+- [Connect](https://github.com/senchalabs/connect) middleware for any connect based Node.js server including [Express](https://expressjs.com), [Next.js](https://nextjs.org), [Nuxt.js](https://nuxtjs.org/).
+- [Cypress](https://cypress.io) commands for mocking Server Side Rendered (SSR) content in [Cypress](https://cypress.io) tests.
 
 ## Install
 
@@ -60,7 +61,7 @@ require("@cypress/mock-ssr/mockSSRCommands")
 
 This module exports [connect middleware](https://github.com/senchalabs/connect) for use in Node.js servers to provide mock routes for mocking and clearing Server Side Rendered (SSR) content.
 
-`cypressMockMiddleware` can be used in any connect based Node.js server including Express, Next.js, Nuxt.
+`cypressMockMiddleware` can be used in any [connect](https://github.com/senchalabs/connect) based Node.js server including [Express](https://expressjs.com), [Next.js](https://nextjs.org), [Nuxt.js](https://nuxtjs.org/).
 
 ```js
 const { cypressMockMiddleware } = require("@cypress/mock-ssr")
@@ -120,6 +121,20 @@ app.prepare().then(() => {
     console.log(`> Ready on http://localhost:${port}`)
   })
 })
+```
+
+## Nuxt.js
+
+For use with [Nuxt.js](https://nuxtjs.org), import `cypressMockMiddleware` and add it to the `serverMiddleware` array of middlewares.
+
+```js
+// nuxt.config.js
+const { cypressMockMiddleware } = require("@cypress/mock-ssr")
+
+export default {
+  serverMiddleware: [cypressMockMiddleware()],
+  // ...
+}
 ```
 
 ## Credit
