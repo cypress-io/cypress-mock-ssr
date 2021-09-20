@@ -16,16 +16,6 @@ $ yarn add -D @cypress/mock-ssr
 
 The following [Cypress](https://cypress.io) commands are bundled in this module.
 
-### Usage
-
-Require `mockSSRCommands` in the `cypress/support/index.js` in your project.
-
-```js
-// cypress/support/index.js
-require("./commands")
-require("@cypress/mock-ssr/mockSSRCommands")
-```
-
 ### mockSSR
 
 `mockSSR` sends a request to the middleware endpoint `/__cypress_server_mock` to set a mock for the given payload. Multiple calls to `mockSSR` can be made, each with distinct payloads.
@@ -55,6 +45,16 @@ it("validate server rendered content", () => {
 > NOTE: `clearSSRMocks` is called in global `beforeEach` and `after` hooks when it is `require`d in `cypress/support/index.js`.
 
 `clearSSRMocks` sends a request to the middleware endpoint `/__cypress_clear_mocks` to clear any mocks for the given test. It should be called in a lifecycle hook, such as `beforeEach`.
+
+### Usage
+
+Require `mockSSRCommands` in the `cypress/support/index.js` in your project.
+
+```js
+// cypress/support/index.js
+require("./commands")
+require("@cypress/mock-ssr/mockSSRCommands")
+```
 
 ## Middleware
 
