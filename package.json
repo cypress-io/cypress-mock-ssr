@@ -1,37 +1,37 @@
 {
-    "name": "@cypress/mock-ssr",
-    "version": "0.0.0",
-    "description": "Cypress Mock SSR",
-    "license": "MIT",
-    "repository": "cypress-io/cypress-mock-ssr",
-    "author": {
-        "name": "Cypress DX Team",
-        "email": "dx@cypress.io",
-        "url": "https://cypress.io"
-    },
-    "engines": {
-        "node": ">=12"
-    },
-    "scripts": {
-        "test": "mocha"
-    },
-    "files": [
-        "index.js",
-        "cli.js"
-    ],
-    "keywords": [
-        "cypress",
-        "mock",
-        "ssr"
-    ],
-    "dependencies": {
-        "connect": "^3.7.0",
-        "nock": "^13.1.3"
-    },
-    "devDependencies": {
-        "chai": "^4.3.4",
-        "mocha": "^9.1.1",
-        "prettier": "^2.4.0",
-        "supertest": "^6.1.6"
-    }
+  "name": "@cypress/mock-ssr",
+  "version": "0.0.1",
+  "description": "Cypress Mock SSR",
+  "license": "MIT",
+  "repository": "cypress-io/cypress-mock-ssr",
+  "author": {
+    "name": "Cypress DX Team",
+    "email": "dx@cypress.io",
+    "url": "https://cypress.io"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cypress",
+    "mock",
+    "ssr"
+  ],
+  "dependencies": {
+    "connect": "^3.7.0",
+    "nock": "^13.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "prettier": "^2.4.0",
+    "supertest": "^6.1.6"
+  }
 }
