@@ -8,11 +8,11 @@
 ## Install
 
 ```sh
-$ npm install --dev https://github.com/cypress-io/cypress-mock-ssr
+$ npm install --dev https://github.com/cypress-io/cypress-mock-ssr#master
 ```
 
 ```sh
-$ yarn add -D https://github.com/cypress-io/cypress-mock-ssr
+$ yarn add -D https://github.com/cypress-io/cypress-mock-ssr#master
 ```
 
 ## Cypress Commands
