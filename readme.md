@@ -1,16 +1,18 @@
 # @cypress/mock-ssr
 
+# NOTE: This experimental package is in Developer Preview and is not yet published to npm
+
 - [Connect](https://github.com/senchalabs/connect) middleware for any connect based Node.js server including [Express](https://expressjs.com), [Next.js](https://nextjs.org), [Nuxt.js](https://nuxtjs.org/).
 - [Cypress](https://cypress.io) commands for mocking Server Side Rendered (SSR) content in [Cypress](https://cypress.io) tests.
 
 ## Install
 
 ```sh
-$ npm install --dev @cypress/mock-ssr
+$ npm install --dev https://github.com/cypress-io/cypress-mock-ssr
 ```
 
 ```sh
-$ yarn add -D @cypress/mock-ssr
+$ yarn add -D https://github.com/cypress-io/cypress-mock-ssr
 ```
 
 ## Cypress Commands
