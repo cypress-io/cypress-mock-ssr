@@ -97,9 +97,12 @@ server.listen(port, (err) => {
 
 ### Next.js
 
+**Note: The custom server recommended is for testing purposes only and uses the base [custom server](https://nextjs.org/docs/advanced-features/custom-server) provided by the [Next.js](https://nextjs.org) team.**
+
 `cypressMockMiddleware()` can be used with a [custom Next.js server](https://nextjs.org/docs/advanced-features/custom-server) to add the mocking capabilities to a [Next.js project](https://nextjs.org)
 
 ```js
+// testServer.js
 const express = require("express")
 const next = require("next")
 const { cypressMockMiddleware } = require("@cypress/mock-ssr")
@@ -123,6 +126,17 @@ app.prepare().then(() => {
     console.log(`> Ready on http://localhost:${port}`)
   })
 })
+```
+
+It is recommended that this `testServer.js` be added as a separate npm script to be used during test runs.
+
+```js
+// package.json
+"scripts": {
+  "build": "next build",
+  "dev": "next dev",
+  "nextTestServer": "node testServer.js"
+}
 ```
 
 ## Nuxt.js
